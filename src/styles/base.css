@@ -1,0 +1,85 @@
+/* ===== Design tokens (taken from the Figma screens) ===== */
+:root {
+  --gold: #b88e2f;
+  --gold-dark: #a37b21;
+  --cream: #f9f1e7;
+  --cream-light: #fff3e3;
+  --cream-section: #fcf8f3;
+  --text: #000;
+  --text-dark: #3a3a3a;
+  --text-mid: #333;
+  --gray: #898989;
+  --gray-light: #9f9f9f;
+  --gray-line: #d9d9d9;
+  --card-bg: #f4f5f7;
+  --sale: #e97171;
+  --new: #2ec1ac;
+  --page-x: 100px; /* horizontal page padding at 1440px */
+  --bs-body-font-family: "Poppins", sans-serif;
+}
+
+/* ===== Base / Bootstrap overrides ===== */
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4, p, ul, dl, dd, figure { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; }
+input, select, textarea { font-family: inherit; }
+address { margin: 0; font-style: normal; }
+.muted { color: var(--gray-light); }
+.gold { color: var(--gold); }
+
+/* ===== Buttons ===== */
+.btn-gold {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--gold); color: #fff; border: 0;
+  font-size: 16px; font-weight: 600; padding: 0 36px; height: 48px;
+  transition: background .2s;
+}
+.btn-gold:hover { background: var(--gold-dark); color: #fff; }
+
+.btn-outline-gold {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 245px; height: 48px; margin-top: 32px;
+  background: #fff; color: var(--gold); border: 1px solid var(--gold);
+  font-size: 16px; font-weight: 600; transition: all .2s;
+}
+.btn-outline-gold:hover { background: var(--gold); color: #fff; }
+
+.btn-outline-dark-lg {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 64px; padding: 0 40px; min-width: 215px;
+  background: #fff; color: #000; border: 1px solid #000; border-radius: 15px;
+  font-size: 20px; font-weight: 400; transition: all .2s;
+}
+.btn-outline-dark-lg:hover { background: #000; color: #fff; }
+.btn-outline-dark-lg:disabled { opacity: .4; pointer-events: none; }
+
+/* ===== Section headings ===== */
+.section-head { text-align: center; }
+.section-head h2, .section-title { font-size: 32px; font-weight: 700; color: var(--text-mid); line-height: 1.25; }
+.section-head p { font-size: 20px; color: #666; margin-top: 4px; }
+.section-title { text-align: center; margin-bottom: 32px; }
+.section-title--lg { font-size: 36px; font-weight: 500; color: #000; margin-bottom: 46px; }
+
+/* ===== Shared form fields ===== */
+.field { margin-top: 36px; }
+.field label { display: block; font-size: 16px; font-weight: 500; margin-bottom: 31px; }
+.field input, .field select, .field textarea {
+  width: 100%; height: 75px; border: 1px solid var(--gray-light); border-radius: 10px;
+  padding: 0 30px; font-size: 16px; background: #fff; color: #000; outline: none; transition: border-color .2s;
+}
+.field textarea { height: 110px; padding-top: 20px; resize: none; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold); }
+.field ::placeholder { color: var(--gray-light); }
+.select-wrap { position: relative; }
+.select-wrap select { appearance: none; color: var(--gray-light); padding-right: 50px; }
+.select-wrap svg { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); pointer-events: none; }
